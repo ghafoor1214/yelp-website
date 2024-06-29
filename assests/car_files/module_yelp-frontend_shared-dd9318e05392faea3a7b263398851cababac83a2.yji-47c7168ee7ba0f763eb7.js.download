@@ -1,0 +1,164 @@
+"use strict";(globalThis.__LOADABLE_LOADED_CHUNKS__=globalThis.__LOADABLE_LOADED_CHUNKS__||[]).push([[2090],{484283:(e,s,i)=>{i.d(s,{Z:()=>Le,J:()=>Ae});var o=i(87363),t=i.n(o),n=i(731709),a=i(182145),r=i(269703),l=i(473550),d=i.n(l),u=i(979186),c=i(940755),p=i(116718),m=i(207927),h=i(478056),g=i(618639),b=i(541833),x=i(164438),y=i(689954),f=i(260888);function w(){return w=Object.assign?Object.assign.bind():function(e){for(var s=1;s<arguments.length;s++){var i=arguments[s];for(var o in i)Object.prototype.hasOwnProperty.call(i,o)&&(e[o]=i[o])}return e},w.apply(this,arguments)}const v=({adUnitsContent:e,servletURI:s,loggingCSRF:i,uniqueRequestId:o,bizSiteUrl:a})=>(t().useEffect((()=>{const t=e.map((e=>({adSlot:e.adSlot,adPlacement:e.adPlacement,uniqueRequestId:o})));t.length>0&&s&&i&&(0,y.Z)({adsLoggingRecords:t,servletURI:s,loggingCSRF:i})}),[e,i,s,o]),(0,n.jsx)(u.Z,{className:d()(f.f),bordered:!0,padding:1,borderRadius:"regular",backgroundColor:b.J.core.grayscaleWhite},e.map((({businessInformation:e,snippet:s})=>(0,n.jsx)(t().Fragment,null,(0,n.jsx)(h.Z,{gutter:1,paddingBottom:e.shouldSuppressRating?1:.5,alignItems:"baseline"},(0,n.jsx)(g.Z,{grow:1},(0,n.jsx)(c.xv,{style:b.I.core.body2TextBold},(0,n.jsx)(c.rU,{href:e.bizUrl,size:"inherit",color:"inherit"},e.name))),(0,n.jsx)(g.Z,null,(0,n.jsx)(p.Z,{bizSiteUrl:a,textSize:"small",iconSize:"regular",showAdTooltip:!0,textAlign:"right"}))),!e.shouldSuppressRating&&(0,n.jsx)(u.Z,{paddingBottom:1},(0,n.jsx)(x.Z,{microformat:!0,rating:e.rating,size:"small",text:e.reviewCount?e.reviewCount:null})),s&&(0,n.jsx)(u.Z,{overflow:"hidden"},(0,n.jsx)(c.xv,{inline:!0,style:b.I.core.body3TextRegular},(0,n.jsx)(m.Z,w({},s,{boldUser:!1})))))))));var j=i(652992),U=i(351539),B=i(395203),P=i(654647),O=i(563798),C=i(522743),Z=i(434725),V=i(866976),D=i(548388),k=i(278209),F=i(472543),T=i(856048),M=i(217854),_=i(625198),E=i.n(_),A=i(371732);const I=a.ZP`
+    fragment MediaDetailCaptionBusinessFields on Business {
+        encid
+        name
+        alias
+        primaryPhoto {
+            encid
+            photoUrl {
+                url1x: url(size: XSMALL)
+                url2x: url(size: SMALL)
+            }
+        }
+    }
+`,R=a.ZP`
+    fragment MediaDetailCaptionUserFields on User {
+        encid
+        profilePhoto {
+            photoUrl {
+                url1x: url(size: SQUARE_XSMALL)
+                url2x: url(size: SQUARE_SMALL)
+            }
+            encid
+        }
+        displayName
+    }
+`,S=a.ZP`
+    ${D.q.fragments.query}
+    ${I}
+    ${R}
+
+    fragment MediaDetailCaptionBusinessPhotoFields on BusinessPhoto {
+        __typename
+        encid
+        photoBusiness: business {
+            ...MediaDetailCaptionBusinessFields
+        }
+        uploadingUser {
+            ...MediaDetailCaptionUserFields
+        }
+        caption
+        createdAt {
+            utcDateTime
+        }
+        availableReactionsContainer(sourceFlow: $reactionsSourceFlow, platform: WWW) {
+            ...ContentReactionsFields
+        }
+    }
+`,L=a.ZP`
+    ${I}
+    ${R}
+
+    fragment MediaDetailCaptionBusinessVideoFields on BusinessVideo {
+        __typename
+        encid
+        videoBusiness: business {
+            ...MediaDetailCaptionBusinessFields
+        }
+        uploadingUser {
+            ...MediaDetailCaptionUserFields
+        }
+        caption
+        timeCreated {
+            utcDateTime
+        }
+    }
+`,z=a.ZP`
+    ${I}
+
+    fragment MediaDetailCaptionBusinessOwnerVideoFields on BusinessOwnerVideo {
+        __typename
+        encid
+        thumbnailUrl
+        videoUrl
+        bizOwnerVideoBusiness: business {
+            ...MediaDetailCaptionBusinessFields
+        }
+        timeCreated {
+            utcDateTime
+        }
+    }
+`,N=e=>({businessName:e.name,businessAlias:e.alias,businessPhotoUrl:e.primaryPhoto?.photoUrl?.url1x,businessPhotoUrl2x:e.primaryPhoto?.photoUrl?.url2x}),$=e=>e?{encid:e.encid,displayName:e.displayName,profilePhotoUrl:e.profilePhoto?.photoUrl?.url1x,profilePhotoUrl2x:e.profilePhoto?.photoUrl?.url2x}:null,q=e=>{const{__typename:s,encid:i}=e;if(E()(i,"MediaDetailCaption fragment should have defined encid"),"BusinessOwnerVideo"===s){const{timeCreated:s,bizOwnerVideoBusiness:o}=e;return E()(s&&s.utcDateTime,"BusinessOwnerVideo.timeCreated should be defined"),{mediaType:"businessOwnerVideo",encid:i,uploadingConsumerUser:null,caption:null,createdAtUtc:s.utcDateTime,reactionsFields:null,...N(o)}}if("BusinessVideo"===s){const{uploadingUser:s,caption:o,timeCreated:t,videoBusiness:n}=e;return E()(t&&t.utcDateTime,"BusinessVideo.timeCreated should be defined"),{mediaType:"video",encid:i,uploadingConsumerUser:$(s),caption:o,createdAtUtc:t.utcDateTime,reactionsFields:null,...N(n)}}{const{uploadingUser:s,caption:o,createdAt:t,photoBusiness:n,availableReactionsContainer:a}=e;return E()(t&&t.utcDateTime,"BusinessPhoto.createdAt should be defined"),E()(n,"BusinessPhoto.business should be defined"),{mediaType:"photo",encid:i,uploadingConsumerUser:$(s),caption:o,createdAtUtc:t.utcDateTime,reactionsFields:a,...N(n)}}};var K={name:"133coio",styles:"line-height:14px;"};const W=({mediaType:e,encid:s,uploadingConsumerUser:i,caption:o,createdAtUtc:a,businessName:l,businessAlias:d,businessPhotoUrl:p,businessPhotoUrl2x:m,reactionsFields:h,locale:g})=>{const{isUserLoggedIn:x}=(0,B.Ii)(),y=i?`/user_details?userid=${i.encid}`:`/biz/${d}`,f=i?i.profilePhotoUrl:p,w=i?i.profilePhotoUrl2x:m;return(0,n.jsx)(t().Fragment,null,(0,n.jsx)(u.Z,null,o&&(0,n.jsx)(c.xv,{style:b.I.core.body2TextRegular},o)),(0,n.jsx)(u.Z,{paddingTop:A.Kp,paddingBottom:3},(0,n.jsx)(C.Z,{gutter:1,verticalAlign:"middle"},(0,n.jsx)(Z.Z,null,(0,n.jsx)(c.rU,{href:y,css:K},(0,n.jsx)(V.Z,{src:f??void 0,srcSet:w?`${w} 2x`:void 0}))),(0,n.jsx)(Z.Z,{fill:!0},(0,n.jsx)(c.xv,{style:b.I.core.body3TextSemibold,color:b.J.core.grayscaleBlackLight,inline:!0},(0,n.jsx)(O.Trans,{id:(0,r.ag)("<0>%{0} </0>on %{1}",{0:i?i.displayName:l,1:F._l.formatAbsoluteDate(a,T.P.MEDIUM,(0,M.v)(g))}).toString(),components:[(0,n.jsx)(c.rU,{href:y,weightOverride:"bold",size:"inherit"})]}))))),h&&"photo"===e&&(0,n.jsx)(D.q,{key:`reactions-media-detail-caption-${s}`,contentEncid:s,contentType:k.zv.BUSINESS_PHOTO,sourceFlow:k.pf.MEDIA_DETAIL,reactionsFields:h,userAuthorizationProps:x?void 0:{locale:g}}))};W.fragments={businessPhoto:S,businessVideo:L,businessOwnerVideo:z};const G=W;var J=i(421518),H=i(414640),X=i(752720),Q=i(858642),Y=i(529977);const ee="previous",se="next";var ie={name:"260zpl",styles:"left:0;"},oe={name:"19zs6va",styles:"right:0;"};const te=({onClick:e,direction:s})=>{const i=(0,o.useMemo)((()=>[(0,n.css)("position:absolute;width:",(0,X.r$)(A.ti+2*A.tI),"px;height:100%;cursor:pointer;top:0;&:hover{> div{background-color:rgba(255,255,255,0.9);}}&:focus{outline:none;> div{border:1px solid ",b.J.core.grayscaleWhite.get(),";}}"),s===ee?ie:oe]),[s]),t=(0,o.useMemo)((()=>[(0,n.css)("position:absolute;top:calc(50% - (",(0,X.r$)(A.ti),"px / 2));background-color:rgba(255,255,255,0.5);width:",(0,X.r$)(A.ti),"px;height:",(0,X.r$)(A.ti),"px;line-height:",(0,X.r$)(A.ti),"px;text-align:center;border-radius:50%;cursor:pointer;transition:all 300ms;"),s===ee?(0,n.css)("left:",(0,X.r$)(A.tI),"px;"):(0,n.css)("right:",(0,X.r$)(A.tI),"px;")]),[s]),a={[ee]:Q.Z,[se]:Y.Z}[s];return(0,n.jsx)(u.Z,{onClick:e,css:i,role:"button",tabIndex:"0",aria:{"aria-label":s===se?(0,r.ag)("Next photo"):(0,r.ag)("Previous photo")}},(0,n.jsx)(u.Z,{css:t},(0,n.jsx)(a,{color:"black"})))};const ne=a.ZP`
+    fragment MediaDetailViewerBusinessPhotoFields on BusinessPhoto {
+        __typename
+        encid
+        viewerPhotoUrl: photoUrl {
+            url: url(size: ORIGINAL)
+        }
+        width
+        height
+    }
+`,ae=a.ZP`
+    fragment MediaDetailViewerBusinessVideoFields on BusinessVideo {
+        __typename
+        encid
+        thumbnailUrl
+        videoUrl
+    }
+`,re=a.ZP`
+    fragment MediaDetailViewerBusinessOwnerVideoFields on BusinessOwnerVideo {
+        __typename
+        encid
+        thumbnailUrl
+        videoUrl
+    }
+`,le=e=>"BusinessOwnerVideo"===e.__typename?(E()(e.videoUrl,"BusinessOwnerVideo.videoUrl should be defined"),E()(e.thumbnailUrl,"BusinessOwnerVideo.thumbnailUrl should be defined"),{mediaType:"businessOwnerVideo",mediaUrl:e.videoUrl,videoThumbnailUrl:e.thumbnailUrl}):"BusinessVideo"===e.__typename?(E()(e.videoUrl,"BusinessVideo.videoUrl should be defined"),E()(e.thumbnailUrl,"BusinessVideo.thumbnailUrl should be defined"),{mediaType:"video",mediaUrl:e.videoUrl,videoThumbnailUrl:e.thumbnailUrl}):(E()(e.viewerPhotoUrl&&e.viewerPhotoUrl.url,"BusinessPhoto.viewerPhotoUrl should be defined"),E()(e.width&&e.height,"BusinessPhoto dimensions should be defined"),{mediaType:"photo",mediaUrl:e.viewerPhotoUrl?.url,photoWidth:e.width,photoHeight:e.height});var de={name:"1lknrij",styles:"height:100%;width:100%;position:absolute;box-sizing:border-box;display:flex;align-items:center;"},ue={name:"15z06hq",styles:"width:100%;height:100%;object-fit:contain;position:absolute;"},ce={name:"hdsy41",styles:"max-width:100%;max-height:100%;margin:0 auto;display:block;object-fit:contain;"},pe={name:"lpguvr",styles:"height:100%;margin:auto;display:block;max-width:100%;"};const me=({mediaType:e,mediaUrl:s,videoThumbnailUrl:i,photoWidth:a,photoHeight:r,onNext:l,onPrevious:d,children:c})=>{const p=new Image;p.src="photo"===e?s:"";const[m,h]=(0,o.useState)(p.complete);return p.complete||(p.onload=()=>h(!0)),(0,n.jsx)(t().Fragment,null,(0,n.jsx)(u.Z,{css:de},"photo"===e?(0,n.jsx)(t().Fragment,null,m?(0,n.jsx)(J.Ei,{css:ue,src:s,alt:""}):(0,n.jsx)(H.ZP,{backgroundColor:"#111",foregroundColor:"#222",viewBox:`0 0 ${a} ${r}`,css:ce},(0,n.jsx)("rect",{x:"0",y:"0",width:"100%",height:"100%"}))):(0,n.jsx)(J.nk,{css:pe,autoPlay:!0,controls:!0,controlsList:"nodownload",loop:!1,muted:!0,src:s,alt:"",poster:i??void 0})),d&&(0,n.jsx)(te,{onClick:d,direction:ee}),l&&(0,n.jsx)(te,{onClick:l,direction:se}),c)};me.fragments={businessPhoto:ne,businessVideo:ae,businessOwnerVideo:re};const he=me;var ge=i(833050),be=i(504433);const xe=({media:e,caption:s})=>{const i=(0,n.css)("background-color:",b.J.core.grayscaleWhite.get(),";padding-left:",(0,X.r$)(A.tI),"px;padding-right:",(0,X.r$)(A.tI),"px;width:380px;");return(0,n.jsx)(h.Z,{css:(0,n.css)("position:absolute;z-index:",(0,ge.Z)(be.CR),";width:100%;max-height:100%;min-height:100%;"),direction:"row",wrap:"nowrap",gap:0},(0,n.jsx)(g.Z,{grow:1,css:(0,n.css)("background-color:",b.J.core.grayscaleBlackDark.get(),";position:relative;")},e),(0,n.jsx)(g.Z,{grow:0,paddingTop:A.qd,paddingBottom:A.qd,css:i,"data-testid":"caption-wrapper"},s))};var ye=i(428121),fe=i(472033),we=i(119855),ve=i(54198),je=i(682642),Ue=i(561060);var Be={name:"bglw3u",styles:"background-color:rgba(0,0,0,0.75);"},Pe={name:"1yfkn84",styles:"border-radius:12px;"},Oe={name:"uodor8",styles:"border-radius:50%;"},Ce={name:"107tt68",styles:"border:0;"};const Ze=({icon:e,onClick:s,testId:i="",text:o,label:t})=>{const a=Be,r=t?{"aria-label":t}:{};return o?(0,n.jsx)(u.Z,{css:(0,ve.Z)([a,Pe],"")},(0,n.jsx)(je.Z,{icon:e,aria:r,type:"tertiary-dark",css:(0,n.css)("border:0;border-top-left-radius:12px;border-top-right-radius:12px;border-bottom-left-radius:12px;border-bottom-right-radius:12px;*{font-size:",b.I.core.body2DisplayMedium.size," !important;font-weight:",b.I.core.body2DisplayMedium.weight," !important;}"),onClick:s,"data-testid":i,text:o})):(0,n.jsx)(u.Z,{css:(0,ve.Z)([a,Oe],"")},(0,n.jsx)(Ue.Z,{icon:e,aria:r,type:"tertiary-dark",css:Ce,onClick:s,"data-testid":i}))};var Ve={name:"xby2mf",styles:"position:absolute;top:0;left:0;right:0;"};const De=({onBackToGrid:e,onShare:s,onFlag:i,hasOtherMediaItems:o})=>(0,n.jsx)(u.Z,{paddingTop:A.qd,paddingLeft:A.tI,paddingRight:A.tI,css:Ve},(0,n.jsx)(h.Z,{direction:"row",nowrap:!0,gutter:A.Kp},(0,n.jsx)(g.Z,{grow:0},o&&e&&(0,n.jsx)(Ze,{icon:we.Z,onClick:e,text:(0,r.ag)("Back to photos")})),(0,n.jsx)(g.Z,{grow:1},(0,n.jsx)(u.Z,null)),(0,n.jsx)(g.Z,{grow:0},(0,n.jsx)(Ze,{icon:ye.Z,onClick:s,label:(0,r.ag)("Share")})),i&&(0,n.jsx)(g.Z,{grow:0},(0,n.jsx)(Ze,{icon:fe.Z,onClick:i,label:(0,r.ag)("Report")}))));function ke(){return ke=Object.assign?Object.assign.bind():function(e){for(var s=1;s<arguments.length;s++){var i=arguments[s];for(var o in i)Object.prototype.hasOwnProperty.call(i,o)&&(e[o]=i[o])}return e},ke.apply(this,arguments)}const Fe=(0,o.memo)(v),Te=a.ZP`
+    ${G.fragments.businessPhoto}
+    ${he.fragments.businessPhoto}
+
+    fragment MediaDetailBusinessPhotoFields on BusinessPhoto {
+        __typename
+        ...MediaDetailViewerBusinessPhotoFields
+        ...MediaDetailCaptionBusinessPhotoFields
+        encid
+        photoBusiness: business {
+            encid
+            name
+            alias
+        }
+    }
+`,Me=a.ZP`
+    ${G.fragments.businessVideo}
+    ${he.fragments.businessVideo}
+
+    fragment MediaDetailBusinessVideoFields on BusinessVideo {
+        __typename
+        ...MediaDetailViewerBusinessVideoFields
+        ...MediaDetailCaptionBusinessVideoFields
+        encid
+        # BusinessVideo.business is non-nullable, BusinessPhoto.business is nullable, so we
+        # have to query them with field aliases otherwise gql complains.
+        videoBusiness: business {
+            encid
+            name
+            alias
+        }
+    }
+`,_e=a.ZP`
+    ${G.fragments.businessOwnerVideo}
+    ${he.fragments.businessOwnerVideo}
+
+    fragment MediaDetailBusinessOwnerVideoFields on BusinessOwnerVideo {
+        __typename
+        ...MediaDetailCaptionBusinessOwnerVideoFields
+        ...MediaDetailViewerBusinessOwnerVideoFields
+        encid
+        bizOwnerVideoBusiness: business {
+            encid
+            name
+            alias
+        }
+    }
+`,Ee=a.ZP`
+    fragment MediaDetailRootFields on Query {
+        photoFlagReasons: flagReasons(contentType: "business_photo") {
+            code
+            description
+        }
+        videoFlagReasons: flagReasons(contentType: "business_video") {
+            code
+            description
+        }
+    }
+`,Ae=(e,s)=>{E()(e.encid,"MediaDetail encid should be defined"),E()(s.photoFlagReasons,"MediaDetail flag reasons should be defined"),E()(s.videoFlagReasons,"MediaDetail flag reasons should be defined");const i={captionProps:q(e),viewerProps:le(e),mediaEncid:e.encid,photoFlagReasons:[...s.photoFlagReasons],videoFlagReasons:[...s.videoFlagReasons]};return"BusinessOwnerVideo"===e.__typename?{...i,mediaType:"businessOwnerVideo",businessName:e.bizOwnerVideoBusiness.name,businessAlias:e.bizOwnerVideoBusiness.alias}:"BusinessVideo"===e.__typename?{...i,mediaType:"video",businessName:e.videoBusiness.name,businessAlias:e.videoBusiness.alias}:(E()(e.photoBusiness,"BusinessPhoto.business should be defined"),{...i,mediaType:"photo",businessName:e.photoBusiness.name,businessAlias:e.photoBusiness.alias})};var Ie={name:"1qc9mm2",styles:"min-height:105px;height:100%;"},Re={name:"1n4ivmb",styles:"max-width:100%;min-width:200px;"};const Se=({captionProps:e,viewerProps:s,businessName:i,businessAlias:a,mediaEncid:l,mediaType:d,photoFlagReasons:p,videoFlagReasons:m,locale:x,positionInList:y,localAd:f,onPrevious:w,onNext:v,onBackToGrid:O,onNestedModalOpen:C,onNestedModalClose:Z})=>{const{isUserLoggedIn:V}=(0,B.Ii)(),[D,k]=(0,o.useState)(!1),[F,T]=(0,o.useState)(!1),[M,_]=(0,o.useState)(!1),E=Boolean(v||w),I="businessOwnerVideo"!==d;return(0,n.jsx)(t().Fragment,null,(0,n.jsx)(xe,{media:(0,n.jsx)(he,ke({},s,{onNext:v,onPrevious:w}),(0,n.jsx)(De,{hasOtherMediaItems:E,onBackToGrid:O,onShare:()=>{k(!0),C&&C()},onFlag:I?()=>{C&&C(),V?T(!0):_(!0)}:void 0})),caption:(0,n.jsx)(h.Z,{direction:"column",wrap:"nowrap",gutter:A.Kp,css:Ie},(0,n.jsx)(g.Z,{grow:0},(0,n.jsx)(u.Z,{paddingBottom:A.Kp},(0,n.jsx)(c.X6,{level:4},(0,r.ag)("Photos for %{businessName}",{businessName:i}))),y&&(0,n.jsx)(u.Z,{paddingBottom:A.Kp,borderBottom:!0},(0,n.jsx)(c.xv,{style:b.I.core.body2DisplayMedium},y))),(0,n.jsx)(g.Z,{grow:1},(0,n.jsx)(G,ke({},e,{locale:x}))),f?(0,n.jsx)(g.Z,{grow:0,css:Re},(0,n.jsx)(Fe,f)):null)}),F&&I&&(0,n.jsx)(j.Z,{flagReasons:"video"===d?m:p,onModalClose:()=>{T(!1),Z&&Z()},mediaId:l,mediaType:d}),D&&(0,n.jsx)(U.Z,{businessAlias:a,mediaId:l,mediaType:d,onModalClose:()=>{k(!1),Z&&Z()}}),M&&(0,n.jsx)(P.Z,{initialScreen:"login",locale:x,visible:!0,onAuth:()=>{_(!1),T(!0)},onClose:()=>{_(!1),Z&&Z()},displayModal:!0,useGoogleApiV2:!0,isPasswordlessLogin:!0,isModernizedUI:!0,showAppleButton:!0,loginTitle:(0,r.ag)("Log in to Yelp"),signupTitle:(0,r.ag)("Sign up for Yelp")}))};Se.fragments={businessPhoto:Te,businessVideo:Me,businessOwnerVideo:_e,root:Ee};const Le=Se},416765:(e,s,i)=>{i.d(s,{W:()=>t});var o=i(87363);const t=({suppressKeyEvents:e,suppressNavigationKeyEvents:s,onClose:i,onRightKeydown:t,onLeftKeydown:n,onEnterKeydown:a,onUpKeydown:r,onDownKeydown:l})=>{const d=(0,o.useCallback)((o=>{e||"INPUT"===document.activeElement?.tagName||("Escape"===o.key&&i&&i(),s||("ArrowRight"===o.key?t&&t():"ArrowLeft"===o.key?n&&n():"ArrowUp"===o.key?r&&r():"ArrowDown"===o.key?l&&l():"Enter"===o.key&&a&&a()))}),[i,l,a,n,t,r,e,s]);(0,o.useEffect)((()=>(document.addEventListener("keydown",d),()=>{document.removeEventListener("keydown",d)})),[d])}},414640:(e,s,i)=>{i.d(s,{ZP:()=>l});var o=i(87363),t=function(){return t=Object.assign||function(e){for(var s,i=1,o=arguments.length;i<o;i++)for(var t in s=arguments[i])Object.prototype.hasOwnProperty.call(s,t)&&(e[t]=s[t]);return e},t.apply(this,arguments)};var n=function(e){var s=e.animate,i=e.backgroundColor,n=e.backgroundOpacity,a=e.baseUrl,r=e.children,l=e.foregroundColor,d=e.foregroundOpacity,u=e.gradientRatio,c=e.uniqueKey,p=e.interval,m=e.rtl,h=e.speed,g=e.style,b=e.title,x=function(e,s){var i={};for(var o in e)Object.prototype.hasOwnProperty.call(e,o)&&s.indexOf(o)<0&&(i[o]=e[o]);if(null!=e&&"function"==typeof Object.getOwnPropertySymbols){var t=0;for(o=Object.getOwnPropertySymbols(e);t<o.length;t++)s.indexOf(o[t])<0&&Object.prototype.propertyIsEnumerable.call(e,o[t])&&(i[o[t]]=e[o[t]])}return i}(e,["animate","backgroundColor","backgroundOpacity","baseUrl","children","foregroundColor","foregroundOpacity","gradientRatio","uniqueKey","interval","rtl","speed","style","title"]),y=c||Math.random().toString(36).substring(6),f=y+"-diff",w=y+"-animated-diff",v=y+"-aria",j=m?{transform:"scaleX(-1)"}:null,U="0; "+p+"; 1",B=h+"s";return(0,o.createElement)("svg",t({"aria-labelledby":v,role:"img",style:t(t({},g),j)},x),b?(0,o.createElement)("title",{id:v},b):null,(0,o.createElement)("rect",{role:"presentation",x:"0",y:"0",width:"100%",height:"100%",clipPath:"url("+a+"#"+f+")",style:{fill:"url("+a+"#"+w+")"}}),(0,o.createElement)("defs",{role:"presentation"},(0,o.createElement)("clipPath",{id:f},r),(0,o.createElement)("linearGradient",{id:w},(0,o.createElement)("stop",{offset:"0%",stopColor:i,stopOpacity:n},s&&(0,o.createElement)("animate",{attributeName:"offset",values:-u+"; "+-u+"; 1",keyTimes:U,dur:B,repeatCount:"indefinite"})),(0,o.createElement)("stop",{offset:"50%",stopColor:l,stopOpacity:d},s&&(0,o.createElement)("animate",{attributeName:"offset",values:-u/2+"; "+-u/2+"; "+(1+u/2),keyTimes:U,dur:B,repeatCount:"indefinite"})),(0,o.createElement)("stop",{offset:"100%",stopColor:i,stopOpacity:n},s&&(0,o.createElement)("animate",{attributeName:"offset",values:"0; 0; "+(1+u),keyTimes:U,dur:B,repeatCount:"indefinite"})))))};n.defaultProps={animate:!0,backgroundColor:"#f5f6f7",backgroundOpacity:1,baseUrl:"",foregroundColor:"#eee",foregroundOpacity:1,gradientRatio:2,id:null,interval:.25,rtl:!1,speed:1.2,style:{},title:"Loading..."};var a=function(e){return e.children?(0,o.createElement)(n,t({},e)):(0,o.createElement)(r,t({},e))},r=function(e){return(0,o.createElement)(a,t({viewBox:"0 0 476 124"},e),(0,o.createElement)("rect",{x:"48",y:"8",width:"88",height:"6",rx:"3"}),(0,o.createElement)("rect",{x:"48",y:"26",width:"52",height:"6",rx:"3"}),(0,o.createElement)("rect",{x:"0",y:"56",width:"410",height:"6",rx:"3"}),(0,o.createElement)("rect",{x:"0",y:"72",width:"380",height:"6",rx:"3"}),(0,o.createElement)("rect",{x:"0",y:"88",width:"178",height:"6",rx:"3"}),(0,o.createElement)("circle",{cx:"20",cy:"20",r:"20"}))};const l=a}}]);
+//# sourceMappingURL=https://js-sourcemaps.yelpcorp.com/assets/public/module_yelp-frontend_shared-dd9318e05392faea3a7b263398851cababac83a2.yji-47c7168ee7ba0f763eb7.js.map

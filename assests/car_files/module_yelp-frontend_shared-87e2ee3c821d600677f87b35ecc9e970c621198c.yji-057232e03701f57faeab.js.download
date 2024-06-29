@@ -1,0 +1,225 @@
+"use strict";(globalThis.__LOADABLE_LOADED_CHUNKS__=globalThis.__LOADABLE_LOADED_CHUNKS__||[]).push([[8544],{688633:(e,t,n)=>{n.d(t,{Z:()=>s});n(87363);var o=n(657633),a=n(731709);function r(){return r=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},r.apply(this,arguments)}const s=function(e){return(0,a.jsx)(o.Z,r({svg:'<svg width="24" height="24" class="icon_svg"><path d="M22.35 9.13A3 3 0 0 0 20 8h-3V4.28A3.28 3.28 0 0 0 13.72 1a2 2 0 0 0-1.9 1.37L9.28 10H2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h13.25c.21 0 5.11-.08 6.7-7.12l1-4.21a3 3 0 0 0-.6-2.54ZM3 12h6v9H3v-9Zm18-.77-1 4.2C18.78 20.85 15.38 21 15.25 21H11v-9.84L13.72 3c.707 0 1.28.573 1.28 1.28V9a1 1 0 0 0 1 1h4a1 1 0 0 1 .78.38 1 1 0 0 1 .22.85Z"/></svg>',name:"24x24_like_v2",v2:!0},e))}},586804:(e,t,n)=>{n.d(t,{ZP:()=>d});var o=n(87363),a=n(731709);const r="3000px",s="rgba(0, 0, 0, 0.05)",i="rgba(255, 255, 255, 0.1)",l=e=>(0,a.css)("background-position:calc(var(--mousedown-x,100px) - ",e," / 2) calc(var(--mousedown-y,100px) - ",e," / 2);background-size:",e," ",e,";"),c=a.keyframes`
+0% {
+    /* start with the background centered but zero-sized */
+    ${l("0px")};
+    background-image: radial-gradient(${s} 50%, transparent 50%);
+    background-color: transparent;
+}
+85% {
+    /* gradually animate to being the size we determined in the hook, perfectly covering
+    the whole element with the ripple color */
+    ${l(`var(--max-radius, ${r})`)};
+    background-image: radial-gradient(${s} 50%, transparent 50%);
+    background-color: transparent;
+}
+
+86% {
+    /* we want to animate the ripple fading out, but background-image is not an animatable attribute
+    get rid of the background image and replace it with a background color instead, which we
+    can animate. since the ripple covered the entire element, the user won't notice a thing. */
+    background-image: none;
+    background-color: ${s};
+}
+
+100% {
+    /* animate the background color to transparent to complete the effect */
+    background-color: transparent;
+}
+`,u=a.keyframes`
+0% {
+    ${l("0px")};
+    background-image: radial-gradient(${i} 50%, transparent 50%);
+    background-color: transparent;
+}
+
+85% {
+    ${l(`var(--max-radius, ${r})`)};
+    background-image: radial-gradient(${i} 50%, transparent 50%);
+    background-color: transparent;
+}
+
+86% {
+    background-image: none;
+    background-color: ${i};
+}
+
+100% {
+    background-color: transparent;
+}
+`;function d(e,t=(()=>!0),n="dark"){const s="light"===n?u:c,[i,l]=(0,o.useState)(null),d=(0,o.useCallback)((n=>{if(e.current&&t(n)){const t=e.current,{left:o,top:a,width:r,height:s}=t.getBoundingClientRect(),i=n.clientX-o,c=n.clientY-a,u=Math.max(i,r-i),d=Math.max(c,s-c),g=2*Math.sqrt(u**2+d**2)*Math.sqrt(2);l({maxRadius:g,mousedownX:i,mousedownY:c})}}),[e,t]);return(0,o.useEffect)((()=>{const t=e.current;function n(e){e.animationName===s.name&&l(null)}return t?.addEventListener("animationend",n),()=>{t?.removeEventListener("animationend",n)}}),[e,s]),{onMouseDown:d,styles:[(0,a.css)("&:after{animation-name:",i?s:"none",";}"),i&&(0,a.css)("--max-radius:",i.maxRadius,"px;--mousedown-x:",i.mousedownX,"px;--mousedown-y:",i.mousedownY,"px;position:relative;&:after{content:'';top:0;left:0;width:100%;height:100%;position:absolute;background-repeat:no-repeat;background-size:var(--max-radius,",r,") var(--max-radius,",r,");animation-duration:0.5s;}")]}}},278209:(e,t,n)=>{n.d(t,{iw:()=>s,nj:()=>i,pf:()=>r,xH:()=>o,zv:()=>a});const o=Object.freeze({DISABLED:"DISABLED",SELECTED:"SELECTED",UNSELECTED:"UNSELECTED"}),a=Object.freeze({REVIEW:"REVIEW",BUSINESS_PHOTO:"BUSINESS_PHOTO",CHECK_IN:"CHECK_IN"}),r=Object.freeze({BIZ_PAGE_REVIEW_SECTION:"businessPageReviewSection",REVIEW_LIST_PAGE:"reviewListPage",PROFILE_OVERVIEW_REVIEWS:"profileOverviewReviews",ACTIVITY_FEED:"activityFeed",MEDIA_DETAIL:"mediaDetail"}),s=Object.freeze({WWW:"WWW",MSITE:"MSITE"});let i=function(e){return e.UNDERNEATH_BUTTON="UNDERNEATH_BUTTON",e.OUTSIDE_BUTTON_RIGHT="OUTSIDE_BUTTON_RIGHT",e}({})},716078:(e,t,n)=>{n.d(t,{ZP:()=>ve});var o=n(87363),a=n.n(o),r=n(182145),s=n(478056),i=n(618639),l=n(654647),c=n(882189),u=n(219561),d=n(269703),g=n(625198),p=n.n(g),m=n(277599),x=n.n(m),y=n(832632),T=n.n(y),_=n(164925),b=n(54198),v=n(731709),C=n(594349),h=n(979186),E=n(492418),f=n(586804),R=n(541833),S=n(583747),w=n(940755),j=n(913393),D=n(171960),F=n(657633);function I(){return I=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},I.apply(this,arguments)}const A=function(e){return(0,v.jsx)(F.Z,I({svg:'<svg width="24" height="24" class="icon_svg"><path d="M22.35 9.13a3 3 0 0 1 .6 2.54l-1 4.21c-1.59 7.04-6.49 7.12-6.7 7.12H10a1 1 0 0 1-1-1V11a1.19 1.19 0 0 1 .05-.32l2.77-8.31A2 2 0 0 1 13.72 1 3.28 3.28 0 0 1 17 4.28V8h3a3 3 0 0 1 2.35 1.13ZM2 10h4a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1Z"/></svg>',name:"24x24_like_filled_v2",v2:!0},e))};var L=n(688633);const Z={svg_illustrations_24x24_helpful_bulb_v2:D.ONK,svg_illustrations_24x24_helpful_bulb_filled_v2:D.O4r,svg_illustrations_24x24_helpful_bulb_gray_v2:D.BUB,svg_illustrations_16x16_helpful_bulb_filled_v2:D.qt0,svg_illustrations_24x24_thanks_v2:D.sZm,svg_illustrations_24x24_thanks_filled_v2:D.fq9,svg_illustrations_24x24_thanks_gray_v2:D.gVD,svg_illustrations_16x16_thanks_filled_v2:D.HkM,svg_illustrations_24x24_love_this_v2:D.LUR,svg_illustrations_24x24_love_this_filled_v2:D.szV,svg_illustrations_24x24_love_this_gray_v2:D.o2O,svg_illustrations_16x16_love_this_filled_v2:D.k9N,svg_illustrations_24x24_oh_no_v2:D.Wmu,svg_illustrations_24x24_oh_no_filled_v2:D.A$x,svg_illustrations_24x24_oh_no_gray_v2:D.qWv,svg_illustrations_16x16_oh_no_filled_v2:D.lDm},k={"24x24_like_filled_v2":A,"24x24_like_v2":L.Z,"16x16_like_filled_v2":A,"16x16_like_v2":L.Z},O=e=>{const[,t=null]=e.match(/WithAlpha(\d+)/)??[],n=e.replace("core","").replace(/WithAlpha\d+/,""),o=`${n.charAt(0).toLowerCase()}${n.slice(1)}`;p()(o in R.J.core,`No token match for color ${o}`);return R.J.core[o].get({alpha:t?parseInt(t,10)/100:1})};var $=n(278209);const N=r.ZP`
+    fragment ContentReactionFormatFields on ContentReactionStateAssetFormat {
+        assetLocator {
+            __typename
+            ... on ContentReactionBundledAssetLocator {
+                assetName
+            }
+            ... on ContentReactionDynamicAssetLocator {
+                assetUrl
+            }
+        }
+        backgroundColor
+        borderColor
+        rippleColor
+        textColor
+    }
+`,P=({assetLocator:e,backgroundColor:t,borderColor:n,rippleColor:o,textColor:a})=>{p()("ContentReactionBundledAssetLocator"===e.__typename,"Dynamic illustration assets not yet implemented");const r=(s=e.assetName,Z[s]);var s;const i=(e=>k[e])(e.assetName);return p()(r||i,`No matching illustration or icon for asset: ${e.assetName}`),{illustrationAsset:r,iconAsset:i,backgroundColor:O(t),borderColor:O(n),rippleColor:O(o),textColor:O(a)}};var H={name:"sajjl8",styles:"border-width:1px;"},U={name:"1r9z4k7",styles:"visibility:hidden;height:0;"};const B=({isActive:e,isDisabled:t,baseCount:n,displayText:r,displayTextSingleCount:l,invertTextOrder:c,showCount:u,showZeroCount:d,showAsTooltip:g,textLayout:m,cornerRadius:x,currentFormat:y})=>{const{illustrationAsset:T,iconAsset:_,backgroundColor:C,borderColor:E,textColor:D}=y,F=e?n+1:n,I=(0,o.useRef)(null),{onMouseDown:A,styles:L}=(0,f.ZP)(I,(()=>!t)),Z="CIRCULAR"===x?"100%":"4px";p()(T||_,"Either illustration or icon should be defined");const k=m===$.nj.OUTSIDE_BUTTON_RIGHT,O=k?R.I.core.body2TextRegular:R.I.core.body3TextRegular,N=k?R.I.core.body2TextSemibold:R.I.core.body3TextSemibold,P=k?R.I.core.body2TextBold:R.I.core.body3TextBold,B=u&&(F>0||d),W=r&&!g&&(F>0||d&&!c)&&(0,v.jsx)(w.xv,{inline:!0,style:e?N:O,css:(0,v.css)("color:",D,";")},1===F&&l?l:r),M=B&&(0,v.jsx)(w.xv,{inline:!0,style:P,css:(0,v.css)("color:",D,";")},F);return(0,v.jsx)(s.Z,{direction:m===$.nj.OUTSIDE_BUTTON_RIGHT?"row":"column",alignItems:"center",gutter:.5,onMouseDown:A,css:!e&&!t&&(0,v.css)("&:hover{.reaction--button{background-color:",R.J.core.grayscaleGrayLight.get({alpha:.5}),";}}")},(0,v.jsx)(i.Z,null,(0,v.jsx)(j.Z,{disabled:!g,tooltipText:r,tooltipDirection:"bottom"},(0,v.jsx)(h.Z,{tagRef:I,className:"reaction--button","data-testid":"reaction-button",css:(0,b.Z)([(0,v.css)("background-color:",C,";border-color:",E," !important;border-style:solid;border-radius:",Z,";height:40px;width:40px;display:flex;justify-content:center;align-items:center;&:after{border-radius:",Z,";}"),L,!t&&H],"")},T&&(0,v.jsx)(S.Q,{illustration:T}),_&&(0,v.jsx)(_,{noAlign:!0})))),(0,v.jsx)(i.Z,null,(0,v.jsx)(s.Z,{direction:"column"},(0,v.jsx)(i.Z,null,c?(0,v.jsx)(a().Fragment,null,M," ",W):(0,v.jsx)(a().Fragment,null,W," ",M)),(0,v.jsx)(i.Z,{"aria-hidden":"true",css:(0,b.Z)([U],"")},r&&!g&&(0,v.jsx)(w.xv,{inline:!0,style:N},r)," ",u&&(0,v.jsx)(w.xv,{inline:!0,style:P},n+1)))))},W=Object.assign(a().memo(B,T()),{fragments:{currentFormat:N}}),M=({currentCount:e,invertTextOrder:t,displayText:n,displayTextSingleCount:o,showCount:a})=>{const r=1===e?o??n:n;return r?t?`${e} ${r}`:a?`${r} ${(0,d.nc)("(%{smart_count} reaction)","(%{smart_count} reactions)",{smart_count:e}).toString()}`:r:(0,d.nc)("(%{smart_count} reaction)","(%{smart_count} reactions)",{smart_count:e}).toString()};const z=r.ZP`
+    ${W.fragments.currentFormat}
+
+    fragment ContentReactionFields on AvailableContentReaction {
+        count
+        reactionType
+        displayText
+        displayTextSingleCount
+        invertTextOrder
+        showCount
+        showZeroCount
+        showAsTooltip
+        toggleState
+        assetFormat {
+            assetContentType
+            textLayout
+            cornerRadius
+            selectedFormat {
+                ...ContentReactionFormatFields
+            }
+            unselectedFormat {
+                ...ContentReactionFormatFields
+            }
+            disabledFormat {
+                ...ContentReactionFormatFields
+            }
+        }
+    }
+`,V=({count:e,toggleState:t,displayText:n,displayTextSingleCount:o,invertTextOrder:a,showCount:r,showZeroCount:s,showAsTooltip:i,assetFormat:l})=>{const{textLayout:c,cornerRadius:u,selectedFormat:d,unselectedFormat:g,disabledFormat:m}=l;return p()("UNDERNEATH_BUTTON"===c||"OUTSIDE_BUTTON_RIGHT"===c,"Alternate text layouts not yet implemented"),{count:e,initialToggleState:t,displayText:n,displayTextSingleCount:o,invertTextOrder:a,showCount:r,showZeroCount:s,showAsTooltip:i,textLayout:$.nj[c],cornerRadius:u,selectedFormat:P(d),unselectedFormat:P(g),disabledFormat:P(m)}};var q={name:"1r3j6ij",styles:"border-radius:4px;user-select:none;cursor:pointer;&[aria-disabled='true'],&:disabled{outline:none;cursor:not-allowed;}"};const G=({toggleState:e,onToggle:t,contentReaction:n})=>{const{count:a,initialToggleState:r,displayText:s,displayTextSingleCount:i,invertTextOrder:l,showCount:c,showZeroCount:u,showAsTooltip:d,textLayout:g,cornerRadius:p,selectedFormat:m,unselectedFormat:x,disabledFormat:y}=n;var T;T=[m,x,y],(0,o.useEffect)((()=>{T.forEach((e=>{e.illustrationAsset&&((new Image).src=e.illustrationAsset.src)}))}),[]);let _=m;e===$.xH.DISABLED?_=y:e===$.xH.UNSELECTED&&(_=x);const f=r===$.xH.SELECTED?a-1:a,R=e===$.xH.SELECTED?f+1:f;return(0,v.jsx)(h.Z,{onClick:t,role:"button","aria-label":M({currentCount:R,invertTextOrder:l,displayText:s,displayTextSingleCount:i,showCount:c}),"aria-pressed":e===$.xH.SELECTED,"aria-disabled":e===$.xH.DISABLED,tabIndex:e===$.xH.DISABLED?null:0,onKeyPress:e=>{Object.values(C.i).includes(e.key)&&(e.preventDefault(),t())},css:(0,b.Z)([q,(0,E.pY)()],"")},(0,v.jsx)(W,{isActive:e===$.xH.SELECTED,isDisabled:e===$.xH.DISABLED,baseCount:r===$.xH.SELECTED?a-1:a,displayText:s,displayTextSingleCount:i,invertTextOrder:l,showCount:c,showZeroCount:u,showAsTooltip:d,textLayout:g,cornerRadius:p,currentFormat:_}))};G.fragments={query:z};const Y=G;var K=n(765956),J=n(34247),Q=n(752720);const X=r.ZP`
+    ${W.fragments.currentFormat}
+
+    fragment ContentReactionIconsFields on AvailableContentReactionsContainer {
+        availableReactions {
+            count
+            reactionType
+            displayText
+            displayTextSingleCount
+            assetFormat {
+                assetContentType
+                cornerRadius
+                collapsedFormat {
+                    ...ContentReactionFormatFields
+                }
+            }
+        }
+    }
+`,ee=({availableReactions:e})=>({givenReactions:e.filter((({count:e})=>e>0)).sort((({count:e,count:t})=>e===t?0:e<t?-1:1)).map((({reactionType:e,displayText:t,displayTextSingleCount:n,assetFormat:{cornerRadius:o,collapsedFormat:a}})=>({reactionType:e,displayText:t,displayTextSingleCount:n,cornerRadius:o,collapsedFormat:P(a)})))}),te=({givenReactions:e})=>{return(0,v.jsx)(h.Z,{"aria-label":(t=e,t.map((({displayText:e,displayTextSingleCount:t})=>t??e)).join(", "))},e.map((({reactionType:t,cornerRadius:n,collapsedFormat:o},a)=>{const{illustrationAsset:r,iconAsset:s,backgroundColor:i,borderColor:l}=o;return(0,v.jsx)(h.Z,{key:t,css:(0,b.Z)([(0,v.css)("background-color:",i,";border-color:",l," !important;border-style:solid;border-radius:","CIRCULAR"===n?"100%":"4px",";height:24px;width:24px;justify-content:center;align-items:center;border-width:1px;display:inline-flex;margin-left:",(0,Q.r$)(-.5),"px;z-index:",e.length-a,";position:relative;")],"")},r&&(0,v.jsx)(S.Q,{illustration:r}),s&&(0,v.jsx)(s,{noAlign:!0}))})));var t};te.fragments={query:X};const ne=te;var oe=n(677841),ae=n(139247),re=n(866976);const se=r.ZP`
+    ${ne.fragments.query}
+
+    query GetContentReactionsListData(
+        $contentEncid: String!
+        $contentType: String!
+        $platform: ContentReactionClientPlatform!
+        $sourceFlow: String!
+        $usersPerPage: Int!
+        $after: String
+    ) {
+        availableReactionsContainers(
+            contentEncids: [$contentEncid]
+            contentType: $contentType
+            platform: $platform
+            sourceFlow: $sourceFlow
+        ) {
+            ...ContentReactionIconsFields
+            usersWithReactions(first: $usersPerPage, after: $after) {
+                edges {
+                    node {
+                        reactions {
+                            encid
+                            reactionType
+                        }
+                        user {
+                            encid
+                            displayName
+                            profilePhoto {
+                                encid
+                                photoUrl {
+                                    url(size: SQUARE_60)
+                                }
+                            }
+                        }
+                    }
+                }
+                pageInfo {
+                    hasNextPage
+                    endCursor
+                }
+            }
+        }
+    }
+`;var ie={name:"1l4w6pd",styles:"display:flex;justify-content:center;"},le={name:"1l4w6pd",styles:"display:flex;justify-content:center;"};const ce=({contentEncid:e,contentType:t,sourceFlow:n,platform:a})=>{const[r,l]=(0,o.useState)([]),[u,d]=(0,o.useState)(null),g=(0,o.useRef)(),m=(0,o.useCallback)((e=>{const t=e?.availableReactionsContainers?.[0].usersWithReactions?.edges;p()(t,"Users with reactions should be defined"),l((e=>[...e,...t.map((e=>(p()(e&&e.node,"User with reactions node should be defined"),e.node)))]))}),[]),{data:y,loading:T,error:_}=(0,c.aM)(se,{variables:{contentEncid:e,contentType:t,platform:a,sourceFlow:n,usersPerPage:20,after:u},notifyOnNetworkStatusChange:!0,onCompleted:m}),b=y?.availableReactionsContainers[0],C=b?.usersWithReactions?.pageInfo;if((0,o.useEffect)((()=>{const e=g.current,t=new IntersectionObserver((e=>{e[0].isIntersecting&&C?.hasNextPage&&!T&&d(C.endCursor)}),{threshold:.1});return e&&t.observe(e),()=>{e&&t.unobserve(e)}}),[g,T,C]),_)throw x()(_);if(!y)return(0,v.jsx)(h.Z,{css:ie},(0,v.jsx)(oe.Z,{size:"xlarge",isLoading:!0,color:"red-dark"}));p()(b,"Available reaction container should be defined"),p()(C,"Page info should be defined");const E=b.availableReactions.reduce(((e,t)=>({...e,[t.reactionType]:t})),{});return(0,v.jsx)(ae.Z,{type:"block",bordered:!0,noFinalBorder:!0},r.map((({reactions:e,user:t})=>{const n=e.map((({reactionType:e})=>E[e])),o=`/user_details?userid=${t.encid}`;return(0,v.jsx)(s.Z,{gutter:2,alignItems:"center",key:t.encid},(0,v.jsx)(i.Z,{grow:1},(0,v.jsx)("a",{href:o,css:(0,v.css)("text-decoration:none;display:flex;gap:",(0,Q.r$)(2),"px;align-items:center;")},(0,v.jsx)(re.Z,{size:"medium",src:t.profilePhoto?.photoUrl?.url??void 0}),(0,v.jsx)(w.xv,{style:R.I.core.body1TextSemibold},t.displayName))),(0,v.jsx)(i.Z,null,(0,v.jsx)(ne,ee({__typename:"AvailableContentReactionsContainer",availableReactions:n}))))})),C.hasNextPage&&(0,v.jsx)(h.Z,{tagRef:g,css:le},(0,v.jsx)(oe.Z,{size:"large",isLoading:!0,color:"red-dark"})))};const ue=r.ZP`
+    ${ne.fragments.query}
+
+    fragment CollapsedContentReactionsFields on AvailableContentReactionsContainer {
+        ...ContentReactionIconsFields
+        availableReactions {
+            count
+        }
+    }
+`;var de={name:"1xoyv9d",styles:"border-radius:4px;user-select:none;cursor:pointer;"};const ge=({contentEncid:e,contentType:t,sourceFlow:n,platform:r,reactionIconsProps:l,totalCount:c})=>{const[u,g]=(0,o.useState)(!1),p=()=>{g(!0)};return(0,v.jsx)(a().Fragment,null,(0,v.jsx)(s.Z,{display:"inline-flex",gutter:1,alignItems:"center",role:"button",onClick:p,"aria-label":(0,d.ag)("See %{totalCount} reactions",{totalCount:c}),tabIndex:0,onKeyPress:e=>{Object.values(C.i).includes(e.key)&&(e.preventDefault(),p())},css:(0,b.Z)([de,(0,E.pY)()],"")},(0,v.jsx)(i.Z,null,(0,v.jsx)(ne,l)),(0,v.jsx)(i.Z,null,(0,v.jsx)(w.xv,{color:R.J.core.grayscaleBlackLight},c))),u&&(0,v.jsx)(K.ZP,{size:"medium",title:(0,d.ag)("Reactions"),onClose:()=>{g(!1)}},(0,v.jsx)(h.Z,{paddingTop:2},(0,v.jsx)(J.dv,null,(0,v.jsx)(ce,{contentEncid:e,contentType:t,sourceFlow:n,platform:r})))))};ge.fragments={query:ue};const pe=ge;function me(){return me=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},me.apply(this,arguments)}const xe=r.ZP`
+    ${Y.fragments.query}
+    ${pe.fragments.query}
+
+    fragment ContentReactionsFields on AvailableContentReactionsContainer {
+        ...CollapsedContentReactionsFields
+        availableReactions {
+            ...ContentReactionFields
+            count
+            reactionType
+            toggleState
+        }
+        containerFormat {
+            alignment
+            axis
+        }
+        isMutuallyExclusive
+    }
+`,ye=r.ZP`
+    mutation CreateContentReaction(
+        $contentEncid: String!
+        $contentType: String!
+        $reactionType: String!
+        $sourceFlow: String!
+        $platform: ContentReactionClientPlatform!
+    ) {
+        createContentReaction(
+            input: {
+                contentEncid: $contentEncid
+                contentType: $contentType
+                reactionType: $reactionType
+                sourceFlow: $sourceFlow
+                platform: $platform
+            }
+        ) {
+            ... on CreateContentReactionSuccess {
+                timestamp {
+                    utcDateTime
+                }
+            }
+            ... on CreateContentReactionError {
+                message
+            }
+        }
+    }
+`,Te=r.ZP`
+    mutation DeleteContentReaction($contentEncid: String!, $contentType: String!, $reactionType: String!) {
+        deleteContentReaction(
+            input: { contentEncid: $contentEncid, contentType: $contentType, reactionType: $reactionType }
+        ) {
+            ... on DeleteContentReactionSuccess {
+                timestamp {
+                    utcDateTime
+                }
+            }
+            ... on DeleteContentReactionError {
+                message
+            }
+        }
+    }
+`,_e=e=>e===$.xH.DISABLED?$.xH.DISABLED:e===$.xH.SELECTED?$.xH.UNSELECTED:$.xH.SELECTED,be=({contentEncid:e,contentType:t,sourceFlow:n,platform:r=$.iw.WWW,reactionsFields:g,currentUserOwnsContent:m=!1,userAuthorizationProps:y,enableGoogleFedCM:b=!1,syncedToggleStates:C,onSyncToggleStates:h})=>{const{availableReactions:E,containerFormat:f,isMutuallyExclusive:R}=g;p()("HORIZONTAL"===f.axis,"Alternate container axis not yet implemented");const S=E.reduce(((e,{reactionType:t,toggleState:n})=>({...e,[t]:C?.[t]??n})),{}),w=(0,_.Z)(C),[j,D]=(0,o.useState)(S);(0,o.useEffect)((()=>{T()(w,C)||D(S)}),[S,C,w]);const[F,I]=(0,o.useState)(!1),[A,L]=(0,o.useState)(null),Z=()=>I(!1),k=e=>{const{[e]:t,...n}=j,o={...R?Object.fromEntries(Object.entries(n).map((([e,t])=>[e,t===$.xH.SELECTED?$.xH.UNSELECTED:t]))):n,[e]:_e(t)};h&&h(o),D(o)},[O]=(0,c.Db)(ye,{onCompleted:({createContentReaction:n})=>{t===$.zv.REVIEW&&null==n&&window.location.assign(`/login?return_url=${encodeURIComponent(`${window.location.href}?hrid=${e}`)}`)}}),[N]=(0,c.Db)(Te),P=async o=>{let a;try{a=(await O({variables:{contentEncid:e,contentType:t,reactionType:o,sourceFlow:n,platform:r}})).data}catch(e){return void(0,u.TN)(x()(e),"ContentReactionsError",null,"warning")}const s=a?.createContentReaction;s&&"CreateContentReactionError"===s.__typename&&(0,u.TN)(new Error(s.message),"ContentReactionsError",null,"warning")},H=n=>{if(y)return L(n),void I(!0);const o=_e(j[n]);o===$.xH.SELECTED?P(n):o===$.xH.UNSELECTED&&(async n=>{let o;try{o=(await N({variables:{contentEncid:e,contentType:t,reactionType:n}})).data}catch(e){return void(0,u.TN)(x()(e),"ContentReactionsError",null,"warning")}const a=o?.deleteContentReaction;a&&"DeleteContentReactionError"===a.__typename&&(0,u.TN)(new Error(a.message),"ContentReactionsError",null,"warning")})(n),k(n)};let U="flex-start";if("CENTER"===f.alignment?U="space-evenly":"TRAILING"===f.alignment&&(U="flex-end"),m){return g.availableReactions.some((({count:e})=>e>0))?(0,v.jsx)(pe,me({},{reactionIconsProps:ee(B=g),totalCount:B.availableReactions.reduce(((e,{count:t})=>e+t),0)},{contentEncid:e,contentType:t,sourceFlow:n,platform:r})):null}var B;return(0,v.jsx)(a().Fragment,null,F&&y&&(0,v.jsx)(l.Z,{initialScreen:"login",locale:y.locale,visible:!0,onAuth:async()=>{p()(A,"A reactionType must be selected"),Z(),k(A),await P(A),y?.onSuccessfulLogin&&y.onSuccessfulLogin()},onClose:Z,displayModal:!0,useGoogleApiV2:!0,isPasswordlessLogin:!0,isModernizedUI:!0,showAppleButton:!0,loginTitle:(0,d.ag)("Log in to Yelp"),signupTitle:(0,d.ag)("Sign up for Yelp"),enableFedCM:b}),(0,v.jsx)(s.Z,{gutter:4,gutterSm:2,justifyContent:U},E.map((e=>(0,v.jsx)(i.Z,{key:e.reactionType},(0,v.jsx)(Y,{toggleState:j[e.reactionType],onToggle:()=>H(e.reactionType),contentReaction:V(e)}))))))},ve=Object.assign(a().memo(be,T()),{fragments:{query:xe}})}}]);
+//# sourceMappingURL=https://js-sourcemaps.yelpcorp.com/assets/public/module_yelp-frontend_shared-87e2ee3c821d600677f87b35ecc9e970c621198c.yji-057232e03701f57faeab.js.map
